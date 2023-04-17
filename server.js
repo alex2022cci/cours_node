@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get('/', (req, res) => res.render('home'));
-app.get('/register', (req, res) => res.render('home'));
+app.get('/register', (req, res) => res.render('register'));
 app.get('/login', (req, res) => res.render('login'));
 app.get('/logout', (req, res) => {
     res.cookie('jwt', '', { maxAge: 1 });  // jwt = json web token
@@ -30,3 +30,4 @@ process.on('unhandledRejection', (err) => {
     console.log(`Logged Error: ${err}`);
     server.close(() => process.exit(1));
 });
+
